@@ -5,7 +5,7 @@ from src.configs.message_config import AppMessages
 
 from src.configs.app_config import app_settings
 
-root_router = APIRouter(prefix=app_settings.APP_ROOT_PREFIX)
+root_router = APIRouter(prefix=app_settings.API_V1_STR)
 
 
 @root_router.get(
