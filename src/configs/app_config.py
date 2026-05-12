@@ -1,3 +1,4 @@
+from sqlalchemy.orm import DeclarativeMeta, declarative_base
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -16,9 +17,14 @@ class AppSettings(BaseSettings):
     APP_RELOAD: bool = True
     APP_LOCATION: str = "main:my_app"
 
+    DB_URL: str
+    JWT_SECRET: str
+    JWT_ALGORITHM: str
+    BASE: DeclarativeMeta = declarative_base()
+
     model_config = SettingsConfigDict(
         env_file=".env", env_file_encoding="utf-8", extra="ignore"
     )
 
 
-app_settings = AppSettings()
+app_settings = AppSettings()  # type: ignore
