@@ -6,6 +6,8 @@ class AppSettings(BaseSettings):
     APP_SUMMARY: str = "Organize your tasks with this API. Here you can create, select, update and delete your tasks through the endpoints."
     APP_VERSION: str = "0.1.0"
 
+    API_V1_STR: str = "/api/v1"
+
     CONTACT_NAME: str = "Henrique Verissimo"
     CONTACT_EMAIL: str = "henriqueverissimocontato@gmail.com"
 

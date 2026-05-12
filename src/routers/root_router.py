@@ -3,7 +3,9 @@ from fastapi.responses import JSONResponse
 
 from src.configs.message_config import AppMessages
 
-root_router = APIRouter(prefix="/v1")
+from src.configs.app_config import app_settings
+
+root_router = APIRouter(prefix=app_settings.APP_ROOT_PREFIX)
 
 
 @root_router.get(
